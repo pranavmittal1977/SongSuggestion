@@ -1,0 +1,449 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1db954, #191414);
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Animation for background gradient */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* App Container */
+.app-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1db954;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+}
+
+/* Input Field Styles */
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Space between input and button */
+    width: 100%; /* Full width */
+}
+
+.input-field input[type="text"] {
+    flex: 1; /* Expand input field */
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-field button {
+    padding: 0.8rem 1.5rem;
+    background: #1db954;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(29, 185, 84, 0.4);
+}
+
+.input-field button:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(29, 185, 84, 0.6);
+}
+
+/* Song List */
+.song-list {
+    margin-top: 2rem;
+    max-height: 400px; /* Set maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px;
+}
+
+/* Customize Scrollbar */
+.song-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.song-list::-webkit-scrollbar-thumb {
+    background: #1db954;
+    border-radius: 10px;
+}
+
+.song-list::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.song-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.song-cover {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.song-details {
+    flex: 1;
+}
+
+.song-details h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #1db954;
+}
+
+.song-details p {
+    margin: 0.2rem 0 0;
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+
+/* Load More Button */
+.load-more-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background: #1db954;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(29, 185, 84, 0.4);
+}
+
+.load-more-button:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(29, 185, 84, 0.6);
+}
+
+.load-more-button:disabled {
+    background: #444;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .song-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .song-cover {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+}
+
+.play-pause-button {
+    padding: 0.5rem 1rem;
+    background: #1db954;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(29, 185, 84, 0.4);
+    margin-left: 1rem;
+}
+
+.play-pause-button:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(29, 185, 84, 0.6);
+}
+
+.no-preview {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-left: auto;
+}
+.spotify-play-button {
+    padding: 0.5rem 1rem;
+    background: #1db954; /* Spotify green */
+    color: #fff;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    margin-left: 1rem;
+}
+
+.spotify-play-button:hover {
+    background: #1ed760; /* Lighter green for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.button-group {
+    display: flex;
+    gap: 1rem; /* Add space between buttons */
+    justify-content: center; /* Center the buttons */
+    margin-top: 1rem; /* Add some spacing from the input field */
+}
+
+.button-group button {
+    flex: 1; /* Ensure buttons take equal width */
+}
+
+
+.clear-button {
+    width: 48%;
+    padding: 0.8rem;
+    background: #ff4c4c;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.clear-button:hover {
+    background: #ff7373;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+/* Style for the search button */
+.search-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #1db954; /* Spotify green */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold; /* Make text bold */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-button:hover {
+    background: #1ed760; /* Lighter green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.search-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+/* Add a container for animated musical waves */
+.wave-container {
+    position: absolute;
+    top: 50%; /* Start positioning from the center */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the container */
+    width: 100%;
+    height: 50%; /* Adjust height to occupy desired area */
+    display: flex;
+    justify-content: center; /* Center the waves horizontally */
+    align-items: flex-end; /* Align waves to the bottom */
+    gap: 2px; /* Space between waves */
+    z-index: -1; /* Place it behind other elements */
+    pointer-events: none; /* Make it non-interactive */
+}
+
+/* Musical Wave Styles */
+.wave {
+    flex: 1; /* Allow the waves to spread evenly */
+    width: 4%; /* Set width for each wave */
+    height: 100px; /* Base height of the waves */
+    background: linear-gradient(180deg, #1db954, #191414); /* Spotify green to black */
+    border-radius: 50%; /* Make them smooth */
+    animation: wave-animation 1.5s ease-in-out infinite;
+    transform-origin: bottom; /* Waves grow/shrink from the bottom */
+}
+
+/* Create waves with variable delays and heights */
+.wave:nth-child(2) {
+    animation-delay: 0.2s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 120px;
+}
+.wave:nth-child(3) {
+    animation-delay: 0.4s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 140px;
+}
+.wave:nth-child(4) {
+    animation-delay: 0.6s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 100px;
+}
+.wave:nth-child(5) {
+    animation-delay: 0.8s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 160px;
+}
+/* Create waves with variable delays and heights */
+.wave:nth-child(6) {
+    animation-delay: 0.2s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 120px;
+}
+.wave:nth-child(7) {
+    animation-delay: 0.4s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 140px;
+}
+.wave:nth-child(8) {
+    animation-delay: 0.6s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 100px;
+}
+.wave:nth-child(9) {
+    animation-delay: 0.8s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 160px;
+}
+/* Create waves with variable delays and heights */
+.wave:nth-child(10) {
+    animation-delay: 0.2s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 120px;
+}
+.wave:nth-child(11) {
+    animation-delay: 0.4s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 140px;
+}
+.wave:nth-child(12) {
+    animation-delay: 0.6s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 100px;
+}
+.wave:nth-child(13) {
+    animation-delay: 0.8s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 160px;
+}
+/* Create waves with variable delays and heights */
+.wave:nth-child(14) {
+    animation-delay: 0.2s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 120px;
+}
+.wave:nth-child(16) {
+    animation-delay: 0.4s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 140px;
+}
+.wave:nth-child(17) {
+    animation-delay: 0.6s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 100px;
+}
+.wave:nth-child(18) {
+    animation-delay: 0.8s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 160px;
+}
+/* Create waves with variable delays and heights */
+.wave:nth-child(19) {
+    animation-delay: 0.2s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 120px;
+}
+.wave:nth-child(20) {
+    animation-delay: 0.4s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 140px;
+}
+.wave:nth-child(21) {
+    animation-delay: 0.6s;
+    background: linear-gradient(180deg, #1ed760, #191414);
+    height: 100px;
+}
+.wave:nth-child(22) {
+    animation-delay: 0.8s;
+    background: linear-gradient(180deg, #1db954, #191414);
+    height: 160px;
+}
+
+/* Wave Animation */
+@keyframes wave-animation {
+    0% {
+        transform: scaleY(1); /* Default size */
+    }
+    25% {
+        transform: scaleY(1.3); /* Grow taller */
+    }
+    50% {
+        transform: scaleY(0.9); /* Shrink slightly */
+    }
+    75% {
+        transform: scaleY(1.1); /* Slightly taller */
+    }
+    100% {
+        transform: scaleY(1); /* Back to default size */
+    }
+}
